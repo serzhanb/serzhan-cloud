@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #07111f;
+    color: white;
+}
+
+header {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 80% 20%, #0c5ca8 0%, transparent 35%),
+        linear-gradient(135deg, #07111f, #0b1d33);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+.hero {
+    max-width: 1200px;
+    margin: auto;
+    padding: 140px 25px;
+}
+
+.hero h1 {
+    font-size: 64px;
+    max-width: 800px;
+}
+
+.hero h1 span {
+    color: #38bdf8;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #aab7c8;
+    max-width: 650px;
+    margin-top: 25px;
+    line-height: 1.7;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 28px;
+    background: #0284c7;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 90px 25px;
+}
+
+section h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: #101e31;
+    padding: 30px;
+    border: 1px solid #1c3855;
+    border-radius: 16px;
+}
+
+.card h3 {
+    color: #38bdf8;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #aab7c8;
+    line-height: 1.6;
+}
+
+.stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.stack span {
+    background: #101e31;
+    border: 1px solid #1c3855;
+    padding: 12px 20px;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 35px;
+    border-top: 1px solid #1c3855;
+    color: #7e91a8;
+}
+
+@media (max-width: 800px) {
+    nav ul {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
