@@ -1,4 +1,4 @@
-name: Deploy Serzhan Cloud
+name: Serzhan Cloud CI/CD
 
 on:
   push:
@@ -8,8 +8,22 @@ on:
   workflow_dispatch:
 
 jobs:
+
+  ci:
+    name: CI - Test Docker Build
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        run: docker build -t serzhan-cloud-ci:${{ github.sha }} .
+
   deploy:
-    runs-on: [self-hosted, Linux, X64]
+    name: CD - Deploy
+    needs: ci
+    runs-on: self-hosted
 
     steps:
       - name: Deploy with Ansible
