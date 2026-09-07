@@ -5,3 +5,11 @@ services:
     ports:
       - "8080:80"
     restart: unless-stopped
+
+  cloudflared:
+    image: cloudflare/cloudflared:latest
+    container_name: serzhan-cloud-tunnel
+    restart: unless-stopped
+    command: tunnel --no-autoupdate --url http://web:80
+    depends_on:
+      - web
